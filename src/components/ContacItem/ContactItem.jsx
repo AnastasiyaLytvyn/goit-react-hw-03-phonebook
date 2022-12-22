@@ -1,8 +1,10 @@
+import css from './ContactItem.module.css'
+
 export const ContactItem = ({ id, name, number, deleteContact }) => {
   return (
-    <li>
+    <li className={css.item}>
       {name}: {number}
-      <button type="button" onClick={() => deleteContact(id)}>
+      <button className={css.button} type="button" onClick={() => deleteContact(id)}>
         Delete
       </button>
     </li>

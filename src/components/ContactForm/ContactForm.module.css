@@ -30,6 +30,7 @@
   border-radius: 4px;
   background-color: lightskyblue;
   cursor: pointer;
+  margin-bottom: 12px;
 }
 
 .button:hover {
