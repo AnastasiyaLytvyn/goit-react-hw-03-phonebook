@@ -16,14 +16,16 @@ export class App extends Component {
     filter: '',
   };
 
-  addContacts = ({ name, number }) => {
+  addContacts = ({ name, number }, reset) => {
     const { contacts } = this.state;
     const newContact = { id: nanoid(), name, number };
 
     if (contacts.find(contact => contact.name === name)) {
-      return alert(`${name} is already in contacts.`);
+      alert(`${name} is already in contacts.`);
+      return;
     }
     this.setState(({ contacts }) => ({ contacts: [...contacts, newContact] }));
+    reset();
   };
 
   getVisibleContacts = () => {
